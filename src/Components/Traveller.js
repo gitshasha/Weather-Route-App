@@ -97,8 +97,7 @@ export default function Traveller() {
   //   return "#888888"; // Default color for other conditions
   // };
 
-  const MAPBOX_ACCESS_TOKEN =
-    "pk.eyJ1IjoiaWFtc2Foc2hhbmsiLCJhIjoiY2wxYWZvNnFoMXg1bTNkcXphdndjNGZ4byJ9.ysW58iZnBTPDZALjmChi-Q";
+  const MAPBOX_ACCESS_TOKEN = `${process.env.REACT_APP_Auth_token}`;
   const geocodeLocation = async (location) => {
     const response = await axios.get(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
@@ -118,8 +117,7 @@ export default function Traveller() {
   };
 
   useEffect(() => {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiaWFtc2Foc2hhbmsiLCJhIjoiY2wxYWZvNnFoMXg1bTNkcXphdndjNGZ4byJ9.ysW58iZnBTPDZALjmChi-Q";
+    mapboxgl.accessToken = `${process.env.REACT_APP_Auth_token}`;
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
 
@@ -357,16 +355,15 @@ export default function Traveller() {
   };
   const [wea, setwea] = useState(false);
 
-  const [sug1, setSug1] = useState('');
+  const [sug1, setSug1] = useState("");
 
-  const [sug2, setSug2] = useState('');
+  const [sug2, setSug2] = useState("");
   const responsiveStyle = css`
     @media (max-width: 600px) {
       background-color: lightblue;
       height: 350vh;
       width: 100vw;
     }
- 
   `;
   const responsiveStyle2 = css`
     @media (max-width: 600px) {
@@ -374,7 +371,6 @@ export default function Traveller() {
       width: 100vw;
       flex-direction: column;
     }
- 
   `;
   const responsiveStyle3 = css`
     @media (max-width: 600px) {
@@ -382,7 +378,6 @@ export default function Traveller() {
       width: 100vw;
       flex-direction: column;
     }
- 
   `;
   return (
     <Flex
@@ -431,8 +426,8 @@ export default function Traveller() {
                   placeholder="Enter Start Location"
                   onChange={(e) => {
                     setstart(e.target.value);
-                    
-setwea(false);
+
+                    setwea(false);
                     fetchSuggestions(e.target.value);
                   }}
                   borderColor="#1c1f1d"
@@ -475,7 +470,7 @@ setwea(false);
                   placeholder="Enter End Location"
                   onChange={(e) => {
                     setend(e.target.value);
-setwea(false);
+                    setwea(false);
                     fetchendSuggestions(e.target.value);
                   }}
                   onFocus={() => setShowendSuggestions(true)}
