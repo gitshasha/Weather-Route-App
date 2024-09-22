@@ -28,12 +28,20 @@ A simple weather dashboard web app built with React.js, utilizing the **Mapbox A
 - **OpenWeather API** for retrieving weather data.
 - **Axios** for making API requests.
 
+## ScreenShots
+-Dashboard
+![Dashboard](https://github.com/gitshasha/Weather-Route-App/blob/main/assets/screenshot-1.png)
+
+-Weather
+![Dashboard](https://github.com/gitshasha/Weather-Route-App/blob/main/assets/screeshot-2.png)
+
+-Route Analysis
+![Dashboard](https://github.com/gitshasha/Weather-Route-App/blob/main/assets/screenshot-3.png)
+
 ## Installation
 
 To run the app locally, follow these steps:
 
-## ScreenShots
-Dashboard
 
 
 1. **Clone the repository**:
